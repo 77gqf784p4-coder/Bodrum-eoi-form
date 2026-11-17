@@ -286,3 +286,167 @@
 
       <div class="form-group">
         <label class="field-label" for="roommate_preference">Twin Room Sharing Preference (if applicable)</label>
+      <div class="form-group">
+        <label class="field-label">Schedule Availability (June 22–28, 2027) *</label>
+        <div class="option-list">
+          <label class="option-item"><input type="radio" name="Schedule Availability" value="Exact dates work great" required /> These exact dates work great for me</label>
+          <label class="option-item"><input type="radio" name="Schedule Availability" value="May extend stay" /> I may want to extend my stay before or after the group dates</label>
+        </div>
+      </div>
+
+      <h2>4. Curating Your Bodrum Experience</h2>
+      <div class="form-group">
+        <label class="field-label">Which experiences would make this 6-night escape unforgettable for you? (Select all that interest you)</label>
+        <div class="option-list">
+          <label class="option-item"><input type="checkbox" name="Selected Experiences" value="Private Gulet Boat Day" /> <span><strong>Private Gulet Boat Day:</strong> Sailing turquoise Aegean bays with swimming stops and onboard lunch</span></label>
+          <label class="option-item"><input type="checkbox" name="Selected Experiences" value="Traditional Turkish Hammam & Spa" /> <span><strong>Traditional Turkish Hammam & Spa:</strong> Authentic bath, scrub, and massage for total relaxation</span></label>
+          <label class="option-item"><input type="checkbox" name="Selected Experiences" value="Bodrum Old Town & Castle Tour" /> <span><strong>Bodrum Old Town & Castle Tour:</strong> Exploring Bodrum Castle, the Marina, and local bazaars</span></label>
+          <label class="option-item"><input type="checkbox" name="Selected Experiences" value="Aegean Wine & Olive Oil Tasting" /> <span><strong>Aegean Wine & Olive Oil Tasting:</strong> Sunset tasting at a local Bodrum vineyard</span></label>
+          <label class="option-item"><input type="checkbox" name="Selected Experiences" value="Beach Club & Poolside Leisure" /> <span><strong>Beach Club & Poolside Leisure:</strong> Unstructured days soaking up the Mediterranean sun</span></label>
+          <label class="option-item"><input type="checkbox" name="Selected Experiences" value="Cultural Day Trip (Ephesus or Pamukkale)" /> <span><strong>Cultural Day Trip:</strong> Optional excursion to the ancient ruins of Ephesus or Pamukkale</span></label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="other_experiences">Other ideas or special requests</label>
+        <input type="text" id="other_experiences" name="Other Experience Ideas" />
+      </div>
+
+      <h2>5. Dietary & Special Requirements</h2>
+      <div class="form-group">
+        <label class="field-label" for="dietary_needs">Do you have any dietary restrictions, food allergies, or accessibility/mobility needs?</label>
+        <textarea id="dietary_needs" name="Dietary & Special Requirements" rows="3" placeholder="Specify here, or write 'None'"></textarea>
+      </div>
+
+      <h2>6. Travel Readiness</h2>
+      <div class="form-group">
+        <label class="field-label">Passport Status *</label>
+        <div class="option-list">
+          <label class="option-item"><input type="radio" name="Passport Status" value="Valid passport" required /> I have a valid passport (Must be valid through at least December 22, 2027)</label>
+          <label class="option-item"><input type="radio" name="Passport Status" value="Need to apply or renew" /> I need to apply for or renew my passport before the trip</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label">Flight Preferences *</label>
+        <div class="option-list">
+          <label class="option-item"><input type="checkbox" name="Book Flights with Kala" value="Yes" checked required /> Book my flights with Kala Travel Agency</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col form-group">
+          <label class="field-label" for="flight_departure_city">Preferred Flight Departure City *</label>
+          <input type="text" id="flight_departure_city" name="Flight Departure City" placeholder="e.g., Monrovia (ROB)" required />
+        </div>
+        <div class="col form-group">
+          <label class="field-label">Preferred Cabin Class *</label>
+          <div class="option-list">
+            <label class="option-item"><input type="radio" name="Preferred Cabin Class" value="Economy" required /> Economy</label>
+            <label class="option-item"><input type="radio" name="Preferred Cabin Class" value="Business Class" /> Business Class</label>
+          </div>
+        </div>
+      </div>
+
+      <h2>7. Interest Level & Sign-Off</h2>
+      <div class="form-group">
+        <label class="field-label">How likely are you to join Kala Travel Agency’s June 2027 Bodrum escape? *</label>
+        <div class="option-list">
+          <label class="option-item"><input type="radio" name="Interest Level" value="Count me in!" required /> Count me in! Ready to book once final pricing and deposit details are released</label>
+          <label class="option-item"><input type="radio" name="Interest Level" value="Very interested" /> Very interested — just need to confirm budget and leave details</label>
+          <label class="option-item"><input type="radio" name="Interest Level" value="Exploring options" /> Exploring options for now</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="notes">Questions or notes for the Kala Travel Agency team</label>
+        <textarea id="notes" name="Questions or Notes" rows="3"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="col form-group">
+          <label class="field-label" for="signature">Electronic Signature (Type Full Name) *</label>
+          <input type="text" id="signature" name="Electronic Signature" required />
+        </div>
+        <div class="col form-group">
+          <label class="field-label" for="submission_date">Date *</label>
+          <input type="date" id="submission_date" name="Submission Date" required />
+        </div>
+      </div>
+
+      <button type="submit" id="submit-btn" class="submit-btn">Submit & Send via Email & WhatsApp</button>
+    </form>
+
+    <div class="footer-whatsapp">
+      <p>Have a question before registering? Reach out to our team directly:</p>
+      <a href="https://wa.me!" target="_blank" class="whatsapp-btn">Chat with Kala Travel Agency on WhatsApp</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const deadline = new Date("2026-12-31T23:59:59Z");
+      const btn = document.getElementById("submit-btn");
+
+      if (new Date() > deadline) {
+        document.getElementById("closed-banner").style.display = "block";
+        btn.disabled = true;
+        btn.textContent = "Submissions Closed (Deadline Passed)";
+        return;
+      }
+
+      document.getElementById("eoi-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        btn.disabled = true;
+        btn.textContent = "Sending to Kala Travel Agency...";
+
+        const name = formData.get("Full Legal Name") || "";
+        const phone = formData.get("Phone / WhatsApp") || "";
+        const email = formData.get("Email Address") || "";
+        const party = formData.get("Travel Party") || "";
+        const adults = formData.get("Number of Adults") || "1";
+        const children = formData.get("Number of Children") || "0";
+        const room = formData.get("Preferred Room Arrangement") || "";
+        const departure = formData.get("Flight Departure City") || "";
+        const cabin = formData.get("Preferred Cabin Class") || "";
+        const interest = formData.get("Interest Level") || "";
+        const experiences = formData.getAll("Selected Experiences").join(", ") || "None selected";
+
+        const whatsappText =
+          `*NEW BODRUM 2027 EOI — KALA TRAVEL AGENCY*%0A` +
+          `*Name:* ${encodeURIComponent(name)}%0A` +
+          `*Phone:* ${encodeURIComponent(phone)}%0A` +
+          `*Email:* ${encodeURIComponent(email)}%0A` +
+          `*Party:* ${encodeURIComponent(party)} (${adults} Adults, ${children} Children)%0A` +
+          `*Room:* ${encodeURIComponent(room)}%0A` +
+          `*Flights:* ${encodeURIComponent(departure)} (${encodeURIComponent(cabin)})%0A` +
+          `*Experiences:* ${encodeURIComponent(experiences)}%0A` +
+          `*Interest:* ${encodeURIComponent(interest)}`;
+
+        const whatsappUrl = `https://wa.me{whatsappText}`;
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        })
+        .then(function () {
+          btn.disabled = false;
+          btn.textContent = "Submit & Send via Email & WhatsApp";
+          form.reset();
+          window.location.href = whatsappUrl;
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = "Submit & Send via Email & WhatsApp";
+          window.location.href = whatsappUrl;
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
