@@ -159,6 +159,28 @@
     .submit-btn:hover {
       background: #0369a1;
     }
+    .submit-btn:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+    .footer-whatsapp {
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.92rem;
+      color: #4b5563;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #25D366;
+      color: #ffffff !important;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -179,46 +201,49 @@
     </div>
 
     <div id="closed-banner" class="closed-banner">
-      Submissions for Kala Travel Agency’s Bodrum Group Escape closed on 31 December 2026. Please contact Kala Travel Agency directly to inquire about remaining availability.
+      Submissions for Kala Travel Agency’s Bodrum Group Escape closed on 31 December 2026. Please contact Kala Travel Agency directly at +231 88 745 5714 or kalatraveltd@gmail.com to inquire about remaining availability.
     </div>
 
     <div class="disclaimer">
       <strong>Please note:</strong> Submitting this form to Kala Travel Agency registers your interest so we can finalize group rates, room blocks, and excursions. No deposit or financial commitment is required at this stage.
     </div>
 
-    <form id="eoi-form" action="https://formspree.io" method="POST">
+    <form id="eoi-form" action="https://formsubmit.co" method="POST">
+      <input type="hidden" name="_subject" value="New Bodrum 2027 Group Escape EOI — Kala Travel Agency" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
 
       <h2>1. Traveler Information</h2>
       <div class="row">
         <div class="col form-group">
           <label class="field-label" for="full_name">Full Legal Name (as shown on passport) *</label>
-          <input type="text" id="full_name" name="full_name" required />
+          <input type="text" id="full_name" name="Full Legal Name" required />
         </div>
         <div class="col form-group">
           <label class="field-label" for="preferred_name">Preferred Name</label>
-          <input type="text" id="preferred_name" name="preferred_name" />
+          <input type="text" id="preferred_name" name="Preferred Name" />
         </div>
       </div>
 
       <div class="row">
         <div class="col form-group">
           <label class="field-label" for="dob">Date of Birth *</label>
-          <input type="date" id="dob" name="dob" required />
+          <input type="date" id="dob" name="Date of Birth" required />
         </div>
         <div class="col form-group">
           <label class="field-label" for="departure_location">City & Country of Departure *</label>
-          <input type="text" id="departure_location" name="departure_location" placeholder="e.g., Kigali, Rwanda" required />
+          <input type="text" id="departure_location" name="Departure City & Country" placeholder="e.g., Monrovia, Liberia" required />
         </div>
       </div>
 
       <div class="row">
         <div class="col form-group">
           <label class="field-label" for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="Email Address" required />
         </div>
         <div class="col form-group">
           <label class="field-label" for="phone">Phone / WhatsApp Number (with country code) *</label>
-          <input type="tel" id="phone" name="phone" placeholder="+250 ..." required />
+          <input type="tel" id="phone" name="Phone / WhatsApp" placeholder="+231 ..." required />
         </div>
       </div>
 
@@ -226,53 +251,38 @@
       <div class="form-group">
         <label class="field-label">Who are you planning to travel with? *</label>
         <div class="option-list">
-          <label class="option-item"><input type="radio" name="travel_party" value="Traveling solo" required /> Traveling solo</label>
-          <label class="option-item"><input type="radio" name="travel_party" value="Traveling with a partner / spouse" /> Traveling with a partner / spouse</label>
-          <label class="option-item"><input type="radio" name="travel_party" value="Traveling with friends" /> Traveling with friends</label>
-          <label class="option-item"><input type="radio" name="travel_party" value="Traveling with family" /> Traveling with family</label>
+          <label class="option-item"><input type="radio" name="Travel Party" value="Traveling solo" required /> Traveling solo</label>
+          <label class="option-item"><input type="radio" name="Travel Party" value="Traveling with a partner / spouse" /> Traveling with a partner / spouse</label>
+          <label class="option-item"><input type="radio" name="Travel Party" value="Traveling with friends" /> Traveling with friends</label>
+          <label class="option-item"><input type="radio" name="Travel Party" value="Traveling with family" /> Traveling with family</label>
         </div>
       </div>
 
       <div class="row">
         <div class="col form-group">
           <label class="field-label" for="adults_count">Number of Adults (including yourself) *</label>
-          <input type="number" id="adults_count" name="adults_count" min="1" value="1" required />
+          <input type="number" id="adults_count" name="Number of Adults" min="1" value="1" required />
         </div>
         <div class="col form-group">
           <label class="field-label" for="children_count">Number of Children (if applicable)</label>
-          <input type="number" id="children_count" name="children_count" min="0" value="0" />
+          <input type="number" id="children_count" name="Number of Children" min="0" value="0" />
         </div>
       </div>
 
       <div class="form-group">
         <label class="field-label" for="companion_names">Name(s) of Accompanying Guest(s)</label>
-        <input type="text" id="companion_names" name="companion_names" placeholder="Enter full names if traveling with others" />
+        <input type="text" id="companion_names" name="Accompanying Guests" placeholder="Enter full names if traveling with others" />
       </div>
 
       <h2>3. Accommodation & Schedule Preferences</h2>
       <div class="form-group">
         <label class="field-label">Preferred Room Arrangement *</label>
         <div class="option-list">
-          <label class="option-item"><input type="radio" name="room_arrangement" value="Private Single Room" required /> Private Single Room (single supplement applies)</label>
-          <label class="option-item"><input type="radio" name="room_arrangement" value="Double / King Room" /> Double / King Room (sharing with partner/guest)</label>
-          <label class="option-item"><input type="radio" name="room_arrangement" value="Twin Room" /> Twin Room (2 separate beds)</label>
+          <label class="option-item"><input type="radio" name="Preferred Room Arrangement" value="Private Single Room" required /> Private Single Room (single supplement applies)</label>
+          <label class="option-item"><input type="radio" name="Preferred Room Arrangement" value="Double / King Room" /> Double / King Room (sharing with partner/guest)</label>
+          <label class="option-item"><input type="radio" name="Preferred Room Arrangement" value="Twin Room" /> Twin Room (2 separate beds)</label>
         </div>
       </div>
 
       <div class="form-group">
         <label class="field-label" for="roommate_preference">Twin Room Sharing Preference (if applicable)</label>
-        <input type="text" id="roommate_preference" name="roommate_preference" placeholder="Enter roommate's name or write 'Open to pairing'" />
-      </div>
-
-      <div class="form-group">
-        <label class="field-label">Schedule Availability (June 22–28, 2027) *</label>
-        <div class="option-list">
-          <label class="option-item"><input type="radio" name="schedule_availability" value="Exact dates work great" required /> These exact dates work great for me</label>
-          <label class="option-item"><input type="radio" name="schedule_availability" value="May extend stay" /> I may want to extend my stay before or after the group dates</label>
-        </div>
-      </div>
-
-      <h2>4. Curating Your Bodrum Experience</h2>
-      <div class="form-group">
-        <label class="field-label">Which experiences would make this 6-night escape unforgettable for you? (Select all that interest you)</label>
-        <div class="option-list">
